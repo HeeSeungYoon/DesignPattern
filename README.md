@@ -32,3 +32,10 @@
 [데코레이터 패턴](./decorator.py) : 객체에 추가 요소를 동적으로 더할 수 있다. 서브클래스를 만들 때보다 훨씬 유연하게 기능을 확장할 수 있다.
 * Component : Beverage 추상 클래스 => HouseBlend, DarkRoast, Espresso, Decaf 클래스 구현
 * Decorator : CondimentDecorator(첨가물) 추상 클래스 => Milk, Mocha, Soy, Whip 클래스 구현
+
+## Chapter 4.
+
+[팩토리 패턴](./factory.py) : 객체를 생성할 때 필요한 인터페이스를 만든다.(=>객체를 생성하는 코드를 캡슐화) 인스턴스 만드는 일은 서브 클래스에게 맡기게 된다.
+* Creator 클래스 : PizzaStore => 구상 클래스(NYStylePizzaStore, ChicagoPizzaStore, CaliforniaPizzaStore)에서 팩토리 메서드(createPizza)구현
+* 팩토리 메서드에서 객체(Product) 인스턴스가 결정
+* Product 클래스 : Pizza => NYStylePizza, ChicagoPizza, CaliforniaPizza
