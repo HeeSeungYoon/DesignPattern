@@ -46,3 +46,7 @@
 추상 팩토리 패턴 : 구상 클래스에 의존하지 않고도 서로 연관되거나 의존적인 객체로 이루어진 [제품군](./PizzaStore/pizzaIngredient.pyPizzaIngredient.py)(피자 원재료)을 생산하는 인터페이스 제공한다. 
 * PizzaIngredientFactory(피자 원재료 팩토리) =>
 NYPizzaIngredientFactory, ChicagoPizzaIngredientFactory 구상 클래스 구현
+
+## Chapter 5.
+
+[싱글턴 패턴](./singleton.py) : 클래스 인스턴스를 하나만 만들고, 그 인스턴스로의 전역 접근을 제공한다.
