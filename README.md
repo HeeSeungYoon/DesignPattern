@@ -50,3 +50,12 @@ NYPizzaIngredientFactory, ChicagoPizzaIngredientFactory 구상 클래스 구현
 ## Chapter 5.
 
 [싱글턴 패턴](./singleton.py) : 클래스 인스턴스를 하나만 만들고, 그 인스턴스로의 전역 접근을 제공한다.
+
+## Chapter 6.
+
+[커맨드 패턴](./command.py) : 요청 내역을 객체로 캡슐화해서 객체를 서로 다른 요청 내역에 따라 매개변수화할 수 있다. => 요청하는 객체와 요청을 수행하는 객체를 분리
+* Commander : Command 인터페이스 => LightOnCommand, LightOffCommand, CeilingFanOnCommand, CeilingFanOffCommand ... 클래스 구현
+* Invoker : RemoteControl => setCommand(), execute(), undo() 메소드 실행
+* [Receiver](./device.py) : Light, CeilingFan, GarageDoor, Stereo ... 클래스 구현
+
+※ 로그 및 트랜잭션 시스템 구현 가능
