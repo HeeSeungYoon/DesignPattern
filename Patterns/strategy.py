@@ -66,6 +66,12 @@ class Duck:
     def swim(self):
         print("모든 오리는 물에 뜹니다. 가짜 오리도 뜨죠")
 
+    def quack(self):
+        print('꽥')
+
+    def fly(self):
+        print('날고 있어요')
+
 # MallardDuck : 오리 클래스를 상속받은 물오리 클래스
 class MallardDuck(Duck):
     def __init__(self):

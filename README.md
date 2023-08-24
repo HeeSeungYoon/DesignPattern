@@ -1,6 +1,6 @@
 # HeadFirst 디자인패턴 (Python)
 
-## Chapter 1. 
+## Chapter 1
 
 * 원칙 1. 변화하는 부분을 찾아내고, 변화하지 않는 부분과 분리한다.
 * 원칙 2. 구현보다는 인터페이스에 맞춰서 프로그래밍한다.
@@ -25,7 +25,7 @@
 
 ※ 출판-구독(Publish-Subscribe) 패턴 : 여러 개의 Subject와 메시지 유형이 있는 복잡한 상황에서 사용, 미들웨어 시스템에서 종종 쓰임
 
-## Chapter 3.
+## Chapter 3
 
 * 원칙 5. OCP(Open-Closed Principle) : 클래스는 확장에는 열려 있어야 하지만 변경에는 닫혀 있어야 한다.
 
@@ -33,7 +33,7 @@
 * Component : Beverage 추상 클래스 => HouseBlend, DarkRoast, Espresso, Decaf 클래스 구현
 * Decorator : CondimentDecorator(첨가물) 추상 클래스 => Milk, Mocha, Soy, Whip 클래스 구현
 
-## Chapter 4.
+## Chapter 4
 
 * 원칙 6. DIP(Dependency Inversion Principle) : 추상화된 것에 의존하게 만들고 구상 클래스에 의존하지 않게 만든다. 
 
@@ -47,11 +47,11 @@
 * PizzaIngredientFactory(피자 원재료 팩토리) =>
 NYPizzaIngredientFactory, ChicagoPizzaIngredientFactory 구상 클래스 구현
 
-## Chapter 5.
+## Chapter 5
 
 [싱글턴 패턴](./Patterns/singleton.py) : 클래스 인스턴스를 하나만 만들고, 그 인스턴스로의 전역 접근을 제공한다.
 
-## Chapter 6.
+## Chapter 6
 
 [커맨드 패턴](./Patterns/command.py) : 요청 내역을 객체로 캡슐화해서 객체를 서로 다른 요청 내역에 따라 매개변수화할 수 있다. => 요청하는 객체와 요청을 수행하는 객체를 분리
 * Commander : Command 인터페이스 => LightOnCommand, LightOffCommand, CeilingFanOnCommand, CeilingFanOffCommand ... 클래스 구현
@@ -59,3 +59,9 @@ NYPizzaIngredientFactory, ChicagoPizzaIngredientFactory 구상 클래스 구현
 * [Receiver](./Patterns/device.py) : Light, CeilingFan, GarageDoor, Stereo ... 클래스 구현
 
 ※ 로그 및 트랜잭션 시스템 구현 가능
+
+## Chapter 7
+
+[어댑터 패턴](./Patterns/adapter.py) : 특정 클래스 인터페이스를 클라이언트에서 요구하는 다른 인터페이스로 변환한다. 인터페이스가 호환되지 않아 같이 쓸 수 없었던 클래스를 사용할 수 있게 도와준다.
+
+
