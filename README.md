@@ -62,6 +62,8 @@ NYPizzaIngredientFactory, ChicagoPizzaIngredientFactory 구상 클래스 구현
 
 ## Chapter 7
 
+* 원칙 7. 최소 지식 원칙(Principle of Least Knowledge) : 최소 결합을 해야 한다. => 어떤 객체든 그 객체와 상호작용을 하는 클래스의 개수와 상호작용 방식에 주의를 기울여야 한다.
+
 [어댑터 패턴](./Patterns/adapter.py) : 특정 클래스 인터페이스를 클라이언트에서 요구하는 다른 인터페이스로 변환한다. 인터페이스가 호환되지 않아 같이 쓸 수 없었던 클래스를 사용할 수 있게 도와준다.
 
-
+[퍼사드 패턴](./Patterns/facade.py) : 서브시스템에 있는 일련의 인터페이스를 통합 인터페이스로 묶어 준다. 고수준 인터페이스를 정의하므로 서브시스템을 더 편리하게 사용할 수 있다.
