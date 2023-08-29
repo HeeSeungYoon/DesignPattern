@@ -66,4 +66,17 @@ NYPizzaIngredientFactory, ChicagoPizzaIngredientFactory 구상 클래스 구현
 
 [어댑터 패턴](./Patterns/adapter.py) : 특정 클래스 인터페이스를 클라이언트에서 요구하는 다른 인터페이스로 변환한다. 인터페이스가 호환되지 않아 같이 쓸 수 없었던 클래스를 사용할 수 있게 도와준다.
 
+TurkeyAdapter => Turkey 객체를 Duck 인터페이스에서 사용 가능
+
 [퍼사드 패턴](./Patterns/facade.py) : 서브시스템에 있는 일련의 인터페이스를 통합 인터페이스로 묶어 준다. 고수준 인터페이스를 정의하므로 서브시스템을 더 편리하게 사용할 수 있다.
+
+HomeTheaterFacade 인터페이스 구현
+
+## Chapter 8.
+
+* 원칙 8. 할리우드 원칙 : 저수준 모듈을 언제 어떻게 호출할지는 고수준 모듈에서 결정한다. => 의존성 부패(Dependency rot) 방지 가능
+
+[템플릿 메서드 패턴](./Patterns/template.py) : 알고리즘의 골격을 정의한다. 알고리즘의 일부 단계를 서브클래스에서 구현할 수 있으며, 알고리즘의 구조는 그대로 유지하면서 알고리즘의 특정 단계를 서브클래스에서 재정의할 수 있다.
+
+CaffeineBeverage 템플릿 구현
+* prepairRecipe() : 템플릿 메서드 => 추상 메서드 brew(), addCondiments() 단계를 서브클래스에서 구현
