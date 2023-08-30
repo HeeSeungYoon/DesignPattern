@@ -80,3 +80,11 @@ HomeTheaterFacade 인터페이스 구현
 
 CaffeineBeverage 템플릿 구현
 * prepairRecipe() : 템플릿 메서드 => 추상 메서드 brew(), addCondiments() 단계를 서브클래스에서 구현
+
+# Chapter 9.
+
+* 원칙 9. 단일 역할 원칙 : 하나의 클래스는 하나의 역할만 맡아야 한다.
+
+※ 응집도(Cohesion) : 한 클래스 또는 모듈이 특정 목적이나 역할을 얼마나 일관되게 지원하는지를 나타내는 척도
+
+[반복자 패턴](./Patterns/iterator.py) : 컬렉션의 구현 방법을 노출하지 않으면서 집합체 내의 모든 항목에 접근하는 방법을 제공한다.
