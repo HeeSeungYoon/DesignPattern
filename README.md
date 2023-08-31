@@ -91,6 +91,6 @@ CaffeineBeverage 템플릿 구현
 
 pancakeMenu(set), dinerMenu(list), cafeMenu(dict) 클래스의 createIterator() 메소드 호출 => iter() 메소드를 호출하여 자료형 내의 모든 항목에 접근
 
-[컴포지트 패턴] : 객체를 트리구조로 구성해서 부분-전체 계층구조를 구현한다. 개별 객체와 복합 객체를 똑같은 방법으로 다룰 수 있다.
+[컴포지트 패턴](./Patterns/composite.py) : 객체를 트리구조로 구성해서 부분-전체 계층구조를 구현한다. 개별 객체와 복합 객체를 똑같은 방법으로 다룰 수 있다.
 
 MenuComponent 추상 클래스 => Menu(복합 객체), MenuItem(개별 객체) 구상 클래스 구현
