@@ -134,6 +134,7 @@ class Waitress:
         menuIterator = iter(self.menus)
         for menu in menuIterator:
             self.printMenuIterator(menu.createIterator())
+            print()
 
         # print('메뉴\n-----\n아침 메뉴')
         # print('\n점심 메뉴')
