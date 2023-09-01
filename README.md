@@ -94,3 +94,10 @@ pancakeMenu(set), dinerMenu(list), cafeMenu(dict) 클래스의 createIterator() 
 [컴포지트 패턴](./Patterns/composite.py) : 객체를 트리구조로 구성해서 부분-전체 계층구조를 구현한다. 개별 객체와 복합 객체를 똑같은 방법으로 다룰 수 있다.
 
 MenuComponent 추상 클래스 => Menu(복합 객체), MenuItem(개별 객체) 구상 클래스 구현
+
+## Chapter 10.
+
+[상태 패턴](./Patterns/state.py) : 객체의 내부 상태가 바뀜에 따라서 객체의 행동을 바꿀 수 있다. 객체의 클래스가 바뀌는 것과 같은 결과를 얻을 수 있다.
+
+* State 추상 클래스 => NoQuarterState, HasQuarterState, SoldState, SoldOutState 구상 클래스 구현
+* GumballMachine 클래스 => 현재 상태를 나타내는 객체(state)에게 행동(insertQuarter(), ejectQuarter(), turnCrank(), dispense() 메소드) 위임
