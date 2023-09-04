@@ -40,6 +40,9 @@ class SoldState(State):
             print('더 이상 알맹이가 없습니다.')
             self.gumballMachine.setState(self.gumballMachine.getSoldOutState())
 
+    def __repr__(self) -> str:
+        return 'Sold state\n.'
+
 class SoldOutState(State):
     def __init__(self, gumballMachine):
         self.gumballMachine = gumballMachine
@@ -59,6 +62,9 @@ class SoldOutState(State):
     def refill(self):
         self.gumballMachine.setState(self.gumballMachine.getNoQuarterState())
 
+    def __repr__(self):
+        return '매진\n'
+
 class NoQuarterState(State):
     def __init__(self, gumballMachine):
         self.gumballMachine = gumballMachine
@@ -75,6 +81,9 @@ class NoQuarterState(State):
 
     def dispense(self):
          print('동전을 넣어주세요.')
+
+    def __repr__(self):
+        return '동전 투입 대기 중...\n'
 
 class HasQuarterState(State):
     def __init__(self, gumballMachine):
@@ -98,6 +107,9 @@ class HasQuarterState(State):
     
     def dispense(self):
         print('알맹이를 내보낼 수 없습니다.')
+
+    def __repr__(self):
+        return 'Has quarter state.'
 
 class WinnerState(State):  
     def __init__(self, gumballMachine):
@@ -124,8 +136,14 @@ class WinnerState(State):
                 print('더 이상 알맹이가 없습니다.')
                 self.gumballMachine.setState(self.gumballMachine.getSoldOutState())
 
+    def __repr__(self):
+        return 'Winner state.'
+
 class GumballMachine:
-    def __init__(self, numberGumballs):
+
+    def __init__(self, location, numberGumballs):
+
+        self.location = location
         self.soldOutState = SoldOutState(self)
         self.noQuarterState = NoQuarterState(self)
         self.hasQuarterState = HasQuarterState(self)
@@ -176,6 +194,12 @@ class GumballMachine:
     def getCount(self):
         return self.count
 
+    def getLocation(self):
+        return self.location
+    
+    def getState(self):
+        return self.state
+
     def releaseBall(self):
         print('알맹이를 내보내고 있습니다.')
         if self.count > 0:
@@ -192,30 +216,53 @@ class GumballMachine:
         
         return string
 
+class GumballMonitor:
+    def __init__(self, machine):
+        self.machine = machine
+
+    def report(self):
+        print('뽑기 기계 위치: ',self.machine.getLocation())
+        print(f'현재 재고: {self.machine.getCount()} 개')
+        print('현재 상태: ',self.machine.getState())
+
+import sys
+
 if __name__ == '__main__':
-    gumballMachine = GumballMachine(5)
+    # gumballMachine = GumballMachine(5)
 
-    print(gumballMachine)
+    # print(gumballMachine)
 
-    gumballMachine.insertQuarter()
-    gumballMachine.turnCrank()
+    # gumballMachine.insertQuarter()
+    # gumballMachine.turnCrank()
 
-    print(gumballMachine)
+    # print(gumballMachine)
 
-    gumballMachine.insertQuarter()
-    gumballMachine.turnCrank()
-    gumballMachine.insertQuarter()
-    gumballMachine.turnCrank()
+    # gumballMachine.insertQuarter()
+    # gumballMachine.turnCrank()
+    # gumballMachine.insertQuarter()
+    # gumballMachine.turnCrank()
 
-    print(gumballMachine)
+    # print(gumballMachine)
 
-    gumballMachine.insertQuarter()
-    gumballMachine.turnCrank()
-    print(gumballMachine)
-    if gumballMachine.getCount() == 0:
-        gumballMachine.refill(5)
+    # gumballMachine.insertQuarter()
+    # gumballMachine.turnCrank()
+    # print(gumballMachine)
+    # if gumballMachine.getCount() == 0:
+    #     gumballMachine.refill(5)
     
-    print(gumballMachine)
-    gumballMachine.insertQuarter()
-    gumballMachine.turnCrank()
-    print(gumballMachine)
+    # print(gumballMachine)
+    # gumballMachine.insertQuarter()
+    # gumballMachine.turnCrank()
+    # print(gumballMachine)
+
+    args = sys.argv[1:]
+    if len(args) < 2:
+        print('GumballMachine <name> <inventory>')
+        sys.exit()
+    
+    count = int(args[1])
+    gumballMachine = GumballMachine(args[0], count)
+
+    monitor = GumballMonitor(gumballMachine)
+
+    monitor.report()

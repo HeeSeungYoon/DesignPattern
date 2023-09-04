@@ -97,7 +97,16 @@ MenuComponent 추상 클래스 => Menu(복합 객체), MenuItem(개별 객체) �
 
 ## Chapter 10.
 
-[상태 패턴](./Patterns/state.py) : 객체의 내부 상태가 바뀜에 따라서 객체의 행동을 바꿀 수 있다. 객체의 클래스가 바뀌는 것과 같은 결과를 얻을 수 있다.
+[상태 패턴](./Patterns/state_proxy.py) : 객체의 내부 상태가 바뀜에 따라서 객체의 행동을 바꿀 수 있다. 객체의 클래스가 바뀌는 것과 같은 결과를 얻을 수 있다.
 
 * State 추상 클래스 => NoQuarterState, HasQuarterState, SoldState, SoldOutState 구상 클래스 구현
 * GumballMachine 클래스 => 현재 상태를 나타내는 객체(state)에게 행동(insertQuarter(), ejectQuarter(), turnCrank(), dispense() 메소드) 위임
+
+## Chapter 11.
+
+[프록시 패턴](./Patterns/state_proxy.py) : 특정 객체(원격 객체, 생성하기 힘든 객체, 보안이 중요한 객체)로의 접근을 제어하는 대리인(특정 객체를 대변하는 객체)을 제공한다.
+
+* Client : GumballMonitor 
+* 원격 객체 : GumballMachine
+
+※ 프록시 종류 : 원격 프록시, 가상 프록시, 보호 프록시, 캐싱 프록시, 동기화 프록시, 방화벽 프록시, 지연 복사 프록시, 스마트 레퍼런스 프록시, 복잡도 숨김 프록시 등 ...
