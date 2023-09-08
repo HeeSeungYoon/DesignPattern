@@ -116,16 +116,72 @@ MenuComponent 추상 클래스 => Menu(복합 객체), MenuItem(개별 객체) �
 [복합 패턴](./Patterns/simuduck.py)
 
 * Quackable 추상 클래스 => MallardDuck, DuckCall, RedHeadDuck, RubberDuck 구상 클래스
-* +어댑터 패턴 
-    * GooseAdapter : 거위용 어댑터
-* +데코레이터 패턴
-    * Decorator : QuackCounter => 오리가 소리 낸 횟수
-* +팩토리 패턴
-    * AbstartDuckFactory : 모든 오리를 감싼다.
-* +컴포지트 패턴
-    * Flock : 복합 객체 => 오리 무리를 관리
-* +옵저버 패턴 
-    * QuackObservable 추상 클래스 => Observable 구상클래스
-    * Observer : Quackologist
-* +반복자 패턴 
 
++어댑터 패턴 
+* GooseAdapter : 거위용 어댑터
+
++데코레이터 패턴
+* Decorator : QuackCounter => 오리가 소리 낸 횟수
+
++팩토리 패턴
+* AbstartDuckFactory : 모든 오리를 감싼다.
+
++컴포지트 패턴
+* Flock : 복합 객체 => 오리 무리를 관리
+
++옵저버 패턴 
+* QuackObservable 추상 클래스 => Observable 구상클래스
+* Observer : Quackologist
+
++반복자 패턴 
+
+## Chapter 13.
+
+## Chapter 14.
+
+[브리지 패턴](./Patterns/bridge.py) : 추상화된 부분과 구현 부분을 서로 다른 클래스 계층 구조로 분리해서 그 둘을 모두 변경할 수 있다.
+
+* RemoteControl <-> TV : 브릿지(bridge)
+
+[빌더 패턴](./Patterns/builder.py) : 복합 객체 생성 과정을 캡슐화한다. 제품의 내부 구조를 클라이언트로부터 보호할 수 있다. 
+
+builder : AbstractBuilder 추상 클래스 => VacationBuilder 구상 빌더
+
+[책임 연쇄 패턴](./Patterns/chain_of_responsibility.py) : 요청을 보낸 쪽과 받는 쪽을 분리할 수 있다. 객체는 사슬의 구조를 몰라도 되고 그 사슬에 들어 있는 다른 객체의 직접적인 레퍼런스를 가질 필요도 없으므로 객체를 단순하게 만들 수 있다.
+
+SpamHandler -> FanHandler -> ComplaintHandler -> NewLocHandler 사슬을 따라 요청이 전달
+
+[플라이웨이트 패턴](./Patterns/flyweight.py) : 실행 시에 객체 인스턴스의 개수를 줄여서 메모리를 절약할 수 있다. 여러 가상 객체의 상태를 한 곳에 모아 둘 수 있다.
+
+TreeManager => treeArray 리스트에 Tree 인스턴스들을 저장
+
+[인터프리터 패턴](./Patterns/interpreter.py) : 간단한 언어를 구현할 때 유용하게 쓰인다.
+
+expression ::= command | sequence | repetiton
+
+sequence ::= expression ';' expression
+
+command ::= right | quack | fly
+
+repetition ::= while '(' variable ')' expression
+
+variable ::= [A-Z,a-z]+
+
+중재자 패턴 : 서로 관련된 객체 사이의 복잡한 통신과 제어를 한 곳으로 집중시킬 때 사용한다. 
+* 시스템과 객체를 분리함으로써 재사용성을 획기적으로 향상시킬 수 있다. 
+* 제어 로직을 한 군데 모아놨으므로 관리하기가 수월하다.
+* 시스템에 들어있는 객체 사이에서 오가는 메시지를 확 줄이고 단순화할 수 있다.
+
+[메멘토 패턴](./Patterns/memento.py) : 객체를 이전의 상태로 복구할 때 사용한다.
+* 저장된 상태를 핵심 객체와는 다른 별도의 객체에 보관할 수 있어 안전하다.
+* 핵심 객체의 데이터를 계속해서 캡슐화된 상태로 유지할 수 있다.
+
+프로토타입 패턴 : 어떤 클래스의 인스턴스를 만들 때 자원과 시간이 많이 들거나 복잡할 때 사용한다. 기존 인스턴스를 복사하기만 해도 새로운 인스턴스를 만들 수 있다.
+* 클라이언트는 새로운 인스턴스를 만드는 과정을 몰라도 된다.
+* 클라이언트는 구체적인 형식을 몰라도 객체를 생성할 수 있다.
+
+비지터 패턴 : 다양한 객체에 새로운 기능을 추가해야한는데 캡슐화가 별로 중요하지 않을 때 사용한다.
+* 복합 객체 내에 속해 있는 모든 객체에 접근하는 일을 도와주는 역할을 한다. 
+* 구조를 변경하지 않으면서도 복합 객체 구조에 새로운 기능을 추가할 수 있다. 
+
+Client(Traverser) => Visitor 객체 호출 : 모든 클래스의 getState() 메소드 호출

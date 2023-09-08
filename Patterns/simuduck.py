@@ -189,7 +189,6 @@ class QuackCounter(Quackable):
     def notifyObservers(self):
         self.duck.notifyObservers()
 
-
 # 어댑터 패턴
 class GooseAdapter(Quackable):
 
